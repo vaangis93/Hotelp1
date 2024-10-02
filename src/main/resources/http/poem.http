@@ -1,0 +1,87 @@
+### GET all poems
+GET {{url}}/poems
+Accept: application/json
+
+### GET a single poem
+GET {{url}}/poem/1
+Content-Type: : application/json
+Accept: application/json
+
+
+
+### POST example
+POST {{url}}/poem
+Content-Type: : application/json
+Accept: application/json
+
+{
+"title" : "The Night Shift" ,
+   "poem" :"A haiku reflecting a coder’s late-night debugging session, where errors persist but determination shines until dawn." ,
+   "style" : "Haiku"
+    }
+
+
+
+
+
+### POST example
+POST {{url}}/poems
+Content-Type: : application/json
+Accept: application/json
+
+[
+  {
+    "title": "The Night Shift",
+    "poem": "A haiku reflecting a coder’s late-night debugging session, where errors persist but determination shines until dawn.",
+    "style": "Haiku"
+  },
+  {
+    "title": "The Code Conqueror",
+    "poem": "A limerick about a coder named Zeke, who solves the final bug in his program with quick, clever typing, celebrating the sleekness of his work.",
+    "style": "Limerick"
+  },
+  {
+    "title": "Digital Dreamer",
+    "poem": "A free verse poem describing the coder’s process of creating invisible worlds, connecting thoughts, and constructing logical cities within lines of code.",
+    "style": "Free Verse"
+  },
+  {
+    "title": "The Debugger’s Sonnet",
+    "poem": "A sonnet about the geek’s delight in coding, their patience and mastery over bugs, and how their programs become works of art, even without poetic rhyme.",
+    "style": "Sonnet (Shakespearean)"
+  },
+  {
+    "title": "Lines of Simplicity",
+    "poem": "A minimalist poem, where the coder equates life with joy and expresses the simple, continuous flow of coding.",
+    "style": "Minimalist"
+  },
+  {
+    "title": "The Coder's Quest",
+    "poem": "A short epic that portrays a coder battling errors like a knight facing dragons, their keystrokes being the sword that leads them to victory in unseen realms.",
+    "style": "Epic (Short Form)"
+  },
+  {
+    "title": "Elegy to a Lost Line",
+    "poem": "An elegy mourning the line of code that fails to run but recognizes that each error strengthens the coder’s resolve.",
+    "style": "Elegy"
+  },
+  {
+    "title": "Tales from the Terminal",
+    "poem": "A ballad narrating a coder’s endless hours spent at the glowing screen, fueled by coffee and determination to fix bugs through the night.",
+    "style": "Ballad"
+  },
+  {
+    "title": "Code Construct",
+    "poem": "An acrostic poem where each letter in 'CODING' stands for a different aspect of the coder’s journey, from compiling to debugging, and never giving up.",
+    "style": "Acrostic"
+  },
+  {
+    "title": "Code Serenity",
+    "poem": "A tanka where the coder reflects on the meditative state of writing code, seeing their soul reflected in the logic of their work.",
+    "style": "Tanka"
+  }
+]
+
+
+
+

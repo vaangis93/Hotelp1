@@ -1,0 +1,34 @@
+### GET all hotel
+GET {{url}}/hotel
+Accept: application/json
+
+### POST a hotel
+POST {{url}}/hotel
+Content-Type: : application/json
+Accept: application/json
+
+{
+"name" :"HotelToby",
+"address":"TobyAle 23"
+
+}
+
+### POST a hotel
+POST {{url}}/hotel
+Content-Type: : application/json
+Accept: application/json
+
+{
+"name" :"Hotel cæcsar",
+"address":"cæsar alle 99"
+"room": [
+{
+"price": 3300,
+"number": 2
+},
+{"price": 6600 ,
+"number": 33
+}
+]
+
+}
