@@ -2,6 +2,7 @@ package app.dtos;
 
 import app.entities.Hotel;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,13 @@ import java.util.stream.Collectors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HotelDTO {
 
-
+    @JsonProperty("id")
     private int id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("address")
     private String address;
+    @JsonProperty("rooms")
     private List<RoomDTO> rooms = new ArrayList<>();
 
     public HotelDTO(Hotel hotel) {
@@ -40,6 +44,9 @@ public class HotelDTO {
                 .collect(Collectors.toList());
     }
 
-
-
+    public HotelDTO(int id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 }// end class

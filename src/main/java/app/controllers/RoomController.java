@@ -13,7 +13,7 @@ import java.util.List;
 
 public class RoomController {
 
-    private final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory("hotels");
+    private final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig(true);
     RoomDAO roomDAO = RoomDAO.getInstance(emf);
 
     // logging class variables

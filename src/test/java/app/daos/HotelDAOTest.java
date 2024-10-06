@@ -25,7 +25,7 @@ class HotelDAOTest {
 
     @BeforeAll
     static void beforeAll() {
-        emf = HibernateConfig.getEntityManagerFactoryForTest();
+        emf = HibernateConfig.getEntityManagerFactoryConfig(true);
         hotelDAO = HotelDAO.getInstance(emf);
     }
 
