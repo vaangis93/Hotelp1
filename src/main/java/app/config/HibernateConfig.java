@@ -1,8 +1,10 @@
 package app.config;
 
 import app.entities.Hotel;
+import app.security.entities.Role;
 import app.entities.Room;
 
+import app.security.entities.User;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
 import org.hibernate.SessionFactory;
@@ -92,6 +94,8 @@ public class HibernateConfig {
 //        configuration.addAnnotatedClass(Address.class);
         configuration.addAnnotatedClass(Hotel.class);
         configuration.addAnnotatedClass(Room.class);
+        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Role.class);
 
 
     }

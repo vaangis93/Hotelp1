@@ -4,6 +4,9 @@ import app.config.ApplicationConfig;
 import app.config.HibernateConfig;
 import app.daos.HotelDAO;
 import app.daos.RoomDAO;
+import app.security.daos.UserDAO;
+import app.security.entities.Role;
+import app.security.entities.User;
 import io.javalin.Javalin;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -12,17 +15,38 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig(true);
-//        HotelDAO hotelDAO = HotelDAO.getInstance(emf);
-//        RoomDAO roomDAO = RoomDAO.getInstance(emf);
-//
-//        Javalin app = Javalin
-//                // instanziere vores configorations class
-//                // med vores configurations i. når vi kører Javalin projektet
-//                .create(ApplicationConfig::configuration)
-//                .start(7070);
+        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig(false);
+//        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig(false);
+        HotelDAO hotelDAO = HotelDAO.getInstance(emf);
+        RoomDAO roomDAO = RoomDAO.getInstance(emf);
+        UserDAO userDAO = UserDAO.getInstance(emf);
 
 
+
+        Javalin app = Javalin
+                // instanziere vores configorations class
+                // med vores configurations i. når vi kører Javalin projektet
+                .create(ApplicationConfig::configuration)
+                .start(7070);
+
+
+        User user1 = new User("user1", "password1");
+        User user2 = new User("user2", "password2");
+        User user3 = new User("user3", "password3");
+
+        Role role1 = new Role("User");
+        Role role2 = new Role("Admin");
+
+        user1.addRole(role1);
+        user2.addRole(role2);
+        user3.addRole(role1);
+
+        userDAO.createExistingRole(role1);
+        userDAO.createExistingRole(role2);
+
+        userDAO.createExistingUser(user1);
+        userDAO.createExistingUser(user2);
+        userDAO.createExistingUser(user3);
 
 
 //        // get room by id --- works

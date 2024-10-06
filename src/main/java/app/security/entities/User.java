@@ -1,4 +1,4 @@
-package app.entities;
+package app.security.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -32,7 +32,7 @@ public class User {
         this.username = username;
         this.password = BCrypt.hashpw(password, BCrypt.gensalt()); // hashet password
     }
-
+// vi verificerer passwordet. ved hjælp af Bcrypt biblioteket
     public boolean verifyPassword(String password) {
         return BCrypt.checkpw(password, this.password); // sammenligner password med hashet password
     }

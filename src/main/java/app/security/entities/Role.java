@@ -1,4 +1,4 @@
-package app.entities;
+package app.security.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
